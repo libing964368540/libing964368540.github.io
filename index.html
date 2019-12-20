@@ -5,8 +5,52 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>Document</title>
+	<script type="text/javascript" src="https://unpkg.com/vue"></script>
 </head>
+<style type="text/css">
+	#app ul li{
+		width: 900px;
+		margin: 0 auto;
+		list-style: none;
+	}
+	#app ul li h3{
+		font-size:16px;
+	}
+	#app ul li a{
+		font-size:16px;
+		color: #2196f3;
+		cursor: pointer;
+	}
+</style>
 <body>
-	<h1>这是我github搭建的一个站点</h1>
+	<div id="app">
+		<h2 style="text-align: center;">项目管理</h2>
+	    <ul>
+	    	<li v-for="item in list">
+	    		<h3 v-text="item.name"></h3>
+	    		<a :href="item.http" v-text='item.http'></a>
+	    	</li>
+	    </ul>
+	</div>
 </body>
+
+<script type="text/javascript">
+    
+     new Vue({
+     	el:'#app',
+     	data:{
+     	   list:[
+     	         {name:'佘运祥名师乡村工作室',http:'https://project1'},
+     	         {name:'学生幼儿保险',http:'https://project2'},
+     	         {name:'官网',http:'https://project3'},
+     	         {name:'公积金',http:'https://project4'},
+     	         {name:'乐知',http:'https://project5'},
+     	         {name:'图书馆',http:'https://project6'},
+     	         {name:'有价',http:'https://project7'},
+     	         {name:'校园成果展示网',http:'https://project8'},
+     	        
+     	      ]
+     	}
+     })
+</script>
 </html>
